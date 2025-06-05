@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class PalindromeChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a word or phrase: ");
+        String input = scanner.nextLine();
+
+        // Remove spaces and convert to lowercase for proper comparison
+        String cleanedInput = input.replaceAll("[\\W_]", "").toLowerCase();
+        String reversed = new StringBuilder(cleanedInput).reverse().toString();
+
+        if (cleanedInput.equals(reversed)) {
+            System.out.println("It's a palindrome!");
+        } else {
+            System.out.println("Not a palindrome.");
+        }
+
+        scanner.close();
+    }
+}
